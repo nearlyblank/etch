@@ -1,0 +1,27 @@
+* {
+    outline: 1px solid red;
+}
+
+html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  } 
+
+
+ .grid-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-box, .grid-column{
+    min-width: 3rem;
+    min-height: 3rem;
+    background-color: blue;
+    display: inline-block;
+} 
