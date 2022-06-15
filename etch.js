@@ -37,6 +37,9 @@ function makeRow() {
     for (let i = 0; i < dim; i++) {
         let newBox = document.createElement('div');
         rowContainer.appendChild(newBox).className = "grid-box";
+        newBox.addEventListener('mouseover', function(e) {
+            e.target.style.backgroundColor = 'white';
+        });
     }
 }
 
