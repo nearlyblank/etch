@@ -14,20 +14,17 @@
 
 // }
 
+let regex = /^[1-9][0-9]{0,1}$/;
+
 document.addEventListener("DOMContentLoaded", function() {
     makeRow();
   });
 
-let dim = parseInt(prompt('Please enter size of grid', '16' ));
+let dim = prompt('Please enter size of grid', '16' );
 
-if (dim > 100) {
+if (dim.match(regex) == null) {
     alert("Number must be less than 100 and greater than 0");
-    dim = parseInt(prompt('Please enter size of grid', '16'));
-}
-
-else if (dim < 0) {
-    alert("Number must be less than 100 and greater than 0");
-    dim = parseInt(prompt('Please enter size of grid', '16'));
+    dim = prompt('Please enter size of grid', '16');
 }
 
 const gridContainer = document.querySelector('.grid-container');
