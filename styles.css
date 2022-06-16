@@ -1,5 +1,12 @@
+@font-face {
+  font-family: "LCD";
+  src: url('lcd.ttf');
+}
+
 * {
   outline: 1px solid red;
+  font-size: 1.6rem;
+  font-family: LCD;
 }
 
 html {
@@ -10,6 +17,11 @@ html {
   box-sizing: inherit;
 } 
 
+.page-container {
+  width: 960px;
+  height: 960px;
+  margin: 0 auto;
+}
 
 .grid-container, .row-container {
   width: 100%;
@@ -17,6 +29,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.grid-container {
+  margin-top: 2rem;
 }
 
 .grid-box, .grid-column{
@@ -28,6 +44,18 @@ html {
   display: inline-block;
 }
 
-/* .grid-box:hover {
-  background-color: white;
-} */
+.btn-container {
+  margin-top: 1rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.dim-btn {
+  width: 7rem;
+  max-width: 7rem;
+  font-size: .8rem;
+  padding: .2rem;
+}
