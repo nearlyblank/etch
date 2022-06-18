@@ -1,25 +1,24 @@
 let regex = /^[1-9][0-9]{0,1}$/; //regex limiting range of valid entries of 1 to 99
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     makeRow();
-//   });
 const dimBtn = document.getElementsByClassName('dim-btn');
 
 
 dimBtn[0].addEventListener('click', () => {
+    // const gridBox = document.getElementsByClassName('grid-box');
+    // div.style.removeProperty('background-color');
     //gridBox[0].style.backgroundColor = null; //this should work once the default grid function works
-    dim = prompt('Please enter size of grid', '16' );
-    userGrid(dim);
+    userInput = prompt('Please enter size of grid', '16' );
+    userGrid(userInput);
 });
 
-function userGrid(dim) {
-    if (dim.match(regex) == null) {
+function userGrid() {
+    if (userInput.match(regex) == null) {
         alert("Number must be less than 100 and greater than 0");
-        dim = prompt('Please enter size of grid', '16');
-        makeRow(dim);
+        userInput = prompt('Please enter size of grid', '16');
+        makeRow(userInput);
     }
-    else if (dim.match(regex)!= null) {
-    makeRow(dim);
+    else if (userInput.match(regex)!= null) {
+    makeRow(userInput);
     }
 };
 
@@ -43,10 +42,10 @@ function makeRow(num) {
     }
 }
 
-function reset (gridBox) {
-    gridBox = document.getElementsByClassName('grid-box');
-    gridBox[0].style.removeProperty('background-color');
-}
+// function reset (gridBox) {
+//     gridBox = document.getElementsByClassName('grid-box');
+//     gridBox[0].style.removeProperty('background-color');
+// }
 function makeGrid(num) {
     makeRow(num*num)
 }

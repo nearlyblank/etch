@@ -23,7 +23,7 @@ html {
   margin: 0 auto;
 }
 
-.grid-container, .row-container {
+.row-container {
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -32,7 +32,10 @@ html {
 }
 
 .grid-container {
-  margin-top: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .grid-box, .grid-column{
