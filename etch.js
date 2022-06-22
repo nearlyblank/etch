@@ -1,8 +1,9 @@
-let regex = /^[1-9][0-9]{0,1}$/; //regex limiting range of valid entries of 1 to 99
+let regex = /[4-9]|[1-9][0-9]{1,1}$/; //regex limiting range of valid entries of 1 to 99
 
 const gridBtn = document.getElementsByClassName('grid-btn');
 const board = document.querySelector('.board');
 const rows = document.getElementsByClassName('row');
+let userInput = 16;
 
 
 gridBtn[0].addEventListener('click', () => {
@@ -12,6 +13,8 @@ gridBtn[0].addEventListener('click', () => {
     userInput = prompt('Please enter size of grid', '16' );
     userGrid();
 });
+
+
 
 function userGrid() {
     if (userInput.match(regex) === null) {
@@ -44,9 +47,14 @@ function defaultGrid () {
     makeRow(16);
     makeColumn(16);
 }
+defaultGrid();
+
+function clearBoard () {
+    
+}
 
 function colorChange () {
     //call this function to create
 }
 
-//next: update regex for 4-99, add event listener mouseover, add clear function to call on click
+//next:  add event listener mouseover, add clear function to call on click
