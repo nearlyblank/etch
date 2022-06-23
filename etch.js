@@ -7,7 +7,7 @@ let userInput = 16;
 makeGrid();
 
 gridBtn[0].addEventListener('click', () => {
-    userInput = prompt('Please enter size of grid (number must be between 4 and 99)', '16' );
+    userInput = prompt('Please enter size of grid', '16' );
     userGrid();
 });
 
