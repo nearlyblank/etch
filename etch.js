@@ -11,12 +11,29 @@ gridBtn[0].addEventListener('click', () => {
     userGrid();
 });
 
+gridBtn[1].addEventListener('click', () => {
+    erase();
+});
+
+gridBtn[2].addEventListener('click', () => {
+    draw();
+});
+
+gridBtn[3].addEventListener('click', () => {
+    randomColor();
+});
+
+gridBtn[4].addEventListener('click', () => {
+    board.replaceChildren();
+    makeGrid();
+});
+
 function userGrid() {
     if (userInput.match(regex) === null) {
-        alert("Number must be less than 100 and greater than 3");
+        alert("Number must be between 4 and 99");
     }
     else {
-        clearBoard();
+        board.replaceChildren();
         makeGrid();
     }
 }
@@ -45,16 +62,34 @@ function makeGrid () {
     makeColumn();
 }
 
-function clearBoard () {
-    board.replaceChildren();
-}
-
-function colorChange () {
-
-}
 
 function erase () {
-    
+    const newStyle = document.querySelectorAll('.grid-box')
+
+    newStyle.forEach(gridBox => {
+        gridBox.addEventListener('mouseover', function(e) {
+            e.target.style.backgroundColor = 'black';
+        });
+    });
 }
 
-//next:  add erase button, color change button
+function draw () {
+    const newStyle = document.querySelectorAll('.grid-box')
+
+    newStyle.forEach(gridBox => {
+        gridBox.addEventListener('mouseover', function(e) {
+            e.target.style.backgroundColor = 'white';
+        });
+    });
+}
+
+function randomColor () {
+    const newStyle = document.querySelectorAll('.grid-box')
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+    newStyle.forEach (gridBox => {
+        gridBox.addEventListener('mouseover', function(e) {
+            e.target.style.backgroundColor = `#${randomColor}`;
+        });
+    });
+}
