@@ -24,8 +24,8 @@
   .board {
     display: grid;
     align-self: center;
-    width: 960px;
-    height: 960px;
+    width: 700px;
+    height: 700px;
   }
 
   .row {
@@ -42,16 +42,17 @@
   }
   
   .btn-container {
+    margin: 0 auto;
     margin-top: 1rem;
-    width: 100%;
+    width: 55%;
     height: auto;
     display: flex;
     justify-content: space-evenly;
   }
   
   .grid-btn {
-    width: 7rem;
+    width: 4rem;
     max-width: 7rem;
-    font-size: .8rem;
+    font-size: .7rem;
     padding: .2rem;
   }
