@@ -1,4 +1,4 @@
-let regex = /[4-9]|[1-9][0-9]{1,1}$/; //regex limiting range of valid entries of 4 to 99
+let regex = /^([4-9]|[1-9][0-9])$/; //regex limiting range of valid entries of 4 to 99
 
 const gridBtn = document.getElementsByClassName('grid-btn');
 const board = document.querySelector('.board');
