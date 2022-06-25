@@ -31,6 +31,7 @@ gridBtn[4].addEventListener('click', () => {
 function userGrid() {
     if (userInput.match(regex) === null) {
         alert("Number must be between 4 and 99");
+        userInput = 16;
     }
     else {
         board.replaceChildren();
