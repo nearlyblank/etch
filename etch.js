@@ -28,6 +28,8 @@ gridBtn[4].addEventListener('click', () => {
     makeGrid();
 });
 
+window.addEventListener("load", colorPicker());
+
 function userGrid() {
     if (userInput.match(regex) === null) {
         alert("Number must be between 4 and 99");
@@ -86,11 +88,50 @@ function draw () {
 
 function randomColor () {
     const newStyle = document.querySelectorAll('.grid-box')
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-
+    const randomColorSelect = Math.floor(Math.random()*16777215).toString(16);
+    
     newStyle.forEach (gridBox => {
         gridBox.addEventListener('mouseover', function(e) {
-            e.target.style.backgroundColor = `#${randomColor}`;
+            e.target.style.backgroundColor = `#${randomColorSelect}`;
         });
     });
+}
+
+function colorPicker () {
+   
+
+    const defaultColor = "#77B5C5";
+    startup();
+
+    function startup() {
+        colors = document.querySelector("#colors");
+        colors.value = defaultColor;
+        colors.addEventListener("input", updateFirst());
+        colors.addEventListener("change", () => updateAll());
+        colors.select();
+        
+    }
+
+    function updateFirst(event) {
+
+        const newStyle = document.querySelectorAll('.grid-box')
+
+        newStyle.forEach(gridBox => {
+            gridBox.addEventListener('mouseover', function(e) {
+                e.target.style.backgroundColor = colors.value;
+            });
+        });
+    }
+
+    function updateAll(event) {
+
+        const newStyle = document.querySelectorAll('.grid-box')
+
+        newStyle.forEach(gridBox => {
+            gridBox.addEventListener('mouseover', function(e) {
+                e.target.style.backgroundColor = colors.value;
+            });
+        });
+        
+    }
 }
