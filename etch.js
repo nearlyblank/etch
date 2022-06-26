@@ -100,7 +100,7 @@ function randomColor () {
 function colorPicker () {
    
 
-    const defaultColor = "#77B5C5";
+    const defaultColor = "#FFFFFF";
     startup();
 
     function startup() {
